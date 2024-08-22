@@ -1,0 +1,688 @@
+@font-face {
+font-family: 'Monplesirscript';
+src: url('./Monplesir_script.ttf');
+}
+
+@font-face {
+font-family: 'Lobster';
+src: url('./Lobster_Regular.ttf');
+}
+
+html, body {
+font-family: 'Monplesirscript', 'Open Sans', sans-serif;
+width: 100%;
+height: 100%;
+margin: 0;
+padding: 0;
+}
+
+body {
+transform: translateY(0);
+}
+
+.wrapper {
+width: 100%;
+min-height: 100vh;
+position: relative;
+overflow: hidden;
+margin:0 auto;
+}
+
+.wrapper .background_image{
+width: 100%;
+min-height: 100vh;
+position: fixed;
+object-fit: cover;
+object-position: center;
+z-index: 0;
+-webkit-transform: translateZ(0);
+}
+
+/* Приглашение */
+.wrapper .top_invitation, .bottom_invitation {
+position: relative;
+width: 100%;
+min-height: 100vh;
+z-index: 1;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+padding: 10px 0px;
+overflow: hidden;
+}
+
+.wrapper .top_invitation .block_text_top, .block_text_bottom {
+width: 60%;
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+line-height: 0;
+color: #00008b !important;
+}
+
+.wrapper .top_invitation .block_text_top .name_first {
+width: 100%;
+text-align: left;
+letter-spacing: 5px;
+box-sizing: border-box;
+padding-left: 10px;
+}
+
+.wrapper .top_invitation .block_text_top .one_guest {
+width: 100%;
+text-align: center;
+letter-spacing: 5px;
+box-sizing: border-box;
+padding-bottom: 50px;
+}
+
+.wrapper .top_invitation .block_text_top .name_first p, .one_guest p{
+font-size: clamp(3rem, 10vw, 6rem);
+font-weight: 500;
+}
+
+.wrapper .top_invitation .block_text_top .name_second{
+width: 100%;
+text-align: right;
+letter-spacing: 5px;
+box-sizing: border-box;
+padding-right: 10px;
+}
+
+.wrapper .top_invitation .block_text_top .name_second p{
+font-size: clamp(3rem, 10vw, 6rem);
+font-weight: 500;
+}
+
+.wrapper .top_invitation .block_text_top .and{
+width: 100%;
+text-align: center;
+}
+
+.wrapper .top_invitation .block_text_top .and p{
+font-size: clamp(1rem, 5vw, 2.5rem);
+font-weight: 500;
+}
+
+.wrapper .top_invitation .block_text_top .invitation_text {
+line-height: normal;
+font-size: clamp(1.2rem, 2.5vw, 1.875rem);
+text-align: center;
+padding: 0 10px;
+
+}
+
+
+.wrapper .top_invitation .image_castle, .image_angle {
+position: absolute;
+width: calc(10vw + 15vh);
+opacity: 0.2;
+}
+
+.wrapper .top_invitation .image_castle {
+left: 10px;
+bottom: 0;
+width: calc(15vw + 20vh);
+}
+
+.wrapper .top_invitation .image_angle {
+right: 10px;
+top: 10px;
+}
+
+@media (max-width: 576px) {
+.wrapper .top_invitation .block_text_top {
+width: 100%;
+padding: 0 20px;
+}
+
+}
+
+/* Dress-code */
+
+.wrapper .dress_code {
+position: relative;
+width: 100%;
+min-height: calc(40dvh + 20dvw);
+z-index: 1;
+padding: 10px 0;
+background: url('./dress_code.png');
+background-size: contain;
+background-repeat: no-repeat;
+background-position: left 30% center;
+display: flex;
+justify-content: center;
+align-items: center;
+overflow: hidden;
+}
+
+/*
+.wrapper .dress_code .image_dress {
+position: absolute;
+height: 100%;
+left: 0;
+}
+
+
+.wrapper .dress_code .image_dress .img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+*/
+
+.wrapper .dress_code .wrapper_dress {
+width: 80%;
+height: 100%;
+display: flex;
+justify-content: top;
+align-items: center;
+flex-direction: column;
+box-sizing: border-box;
+text-align: center;
+}
+
+.wrapper .dress_code .wrapper_dress .block_text_dress {
+top: 0;
+}
+
+
+.wrapper .dress_code .wrapper_dress .block_text_dress .title_dress {
+font-size: clamp(2.5rem, 5vw, 3rem);
+font-weight: 500;
+line-height: 0.5;
+}
+
+.wrapper .dress_code .wrapper_dress .block_text_dress .text_dress {
+font-size: clamp(1.2rem, 2.5vw, 2rem);
+font-weight: 500;
+line-height: normal;
+}
+
+.wrapper .dress_code .wrapper_dress .block_color {
+width: 340px;
+height: 60px;
+display: flex;
+gap: 10px;
+}
+
+.wrapper .dress_code .wrapper_dress .block_color div {
+width: 25%;
+height: 100%;
+border-radius: 50px;
+}
+
+.wrapper .dress_code .wrapper_dress .block_color .yellow {
+background: rgba(255, 255, 148, 1);
+}
+
+.wrapper .dress_code .wrapper_dress .block_color .peach {
+background: rgba(255, 205, 152, 1);
+}
+
+.wrapper .dress_code .wrapper_dress .block_color .blue {
+background: rgba(118, 194, 228, 1);
+}
+
+.wrapper .dress_code .wrapper_dress .block_color .violet {
+background: rgba(233, 177, 241, 1);
+}
+
+.wrapper .dress_code .wrapper_dress .block_color .red {
+background: rgba(253, 163, 163, 1);
+}
+
+@media (max-width: 1200px) {
+
+.wrapper .dress_code {
+background: none;
+}
+}
+
+
+/* Анкета гостя */
+
+.wrapper .guest_form {
+position: relative;
+width: 100%;
+min-height: 50vh;
+z-index: 1;
+display: flex;
+justify-content: center;
+align-items: center;
+padding-bottom: 50px;
+
+}
+
+.wrapper .guest_form form{
+width: 500px;
+display: flex;
+flex-direction: column;
+padding: 0 10px;
+gap: 20px;
+}
+
+.wrapper .guest_form form .form_title{
+text-align: center;
+}
+
+.wrapper .guest_form form .form_title .title {
+font-size: clamp(2.5rem, 5vw, 3rem);
+font-weight: 500;
+line-height: 0;
+}
+
+.wrapper .guest_form form .name .form_name{
+font-size: clamp(1.2rem, 2.5vw, 1.875rem);
+font-weight: 500;
+line-height: normal;
+}
+
+.wrapper .guest_form form .name .input_name {
+width: 100%;
+padding: 15px 12px;
+height: 50px;
+outline: none;
+border-radius: 30px;
+background: rgba(0, 191, 255, 0.1);
+border: 2px solid rgba(30, 144, 255, 0.5);
+transition: 0.5s;
+box-sizing: border-box;
+font-family: 'Monplesirscript', 'Open Sans', sans-serif;
+letter-spacing: 1px;
+font-size: clamp(0.8rem, 2.5vw, 1rem);
+}
+
+.wrapper .guest_form form .name .input_name:focus {
+background: rgba(0, 191, 255, 0.3);
+border: 2px solid rgba(30, 144, 255, 1);
+color: rgba(0, 0, 0, 1);
+}
+
+.wrapper .guest_form form .name .label_plus_one {
+font-size: clamp(1rem, 2.5vw, 1.2rem);
+font-weight: 500;
+line-height: normal;
+}
+
+.wrapper .guest_form form .presence {
+}
+
+.wrapper .guest_form form .presence .title_presence {
+font-size: clamp(1.2rem, 2.5vw, 1.875rem);
+font-weight: 500;
+line-height: normal;
+}
+
+.wrapper .guest_form form .presence .radio_label {
+width: 100%;
+display: flex;
+justify-content: space-between;
+}
+.wrapper .guest_form form .presence .radio_label .input_box .input_radio {
+}
+
+.wrapper .guest_form form .presence .radio_label .input_box .input_label {
+font-size: clamp(1rem, 2.5vw, 1.2rem);
+font-weight: 500;
+line-height: normal;
+}
+
+.wrapper .guest_form form .alco .title_alco {
+font-size: clamp(1.2rem, 2.5vw, 1.875rem);
+font-weight: 500;
+line-height: normal;
+}
+
+.wrapper .guest_form form .alco .all_guest {
+width: 100%;
+display: flex;
+justify-content: center;
+gap: 50px;
+}
+
+.wrapper .guest_form form .alco .all_guest .first_guest, .second_guest {
+width: 100%;
+}
+
+
+.wrapper .guest_form form .alco .all_guest .first_guest .name_guest, .second_guest .name_guest {
+font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+font-weight: 500;
+line-height: normal;
+text-align: center;
+}
+
+.wrapper .guest_form form .alco .all_guest .first_guest .input_boxes, .second_guest .input_boxes {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+
+.wrapper .guest_form form .alco .all_guest .label_input {
+font-size: clamp(1rem, 2.5vw, 1.2rem);
+font-weight: 500;
+line-height: normal;
+}
+
+.wrapper .guest_form form button {
+width: 100%;
+height: 50px;
+border-radius: 30px;
+background: rgba(0, 191, 255, 0.1);
+border: 2px solid rgba(30, 144, 255, 0.5);
+transition: 0.5s;
+color: rgba(0, 0, 0, 0.5);
+font-size: clamp(0.8rem, 2.5vw, 1rem);
+font-family: 'Monplesirscript', 'Open Sans', sans-serif;
+letter-spacing: 1px;
+cursor: pointer;
+}
+
+.wrapper .guest_form form button:hover {
+background: rgba(0, 191, 255, 0.3);
+border: 2px solid rgba(30, 144, 255, 1);
+color: rgba(0, 0, 0, 1);
+}
+
+.wrapper .guest_form form .input_checkbox, .input_radio {
+height: 1.2em;
+width: 1.2em;
+}
+.wrapper .guest_form form .input_checkbox:hover, input_radio:hover {
+box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+
+/* Таймер до события */
+
+.wrapper .timer {
+position: relative;
+width: 100%;
+min-height: 50vh;
+z-index: 1;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 10px 0;
+overflow: hidden;
+}
+
+.wrapper .timer .wrapper_timer {
+width: 100%;
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+
+.wrapper .timer .wrapper_timer .block_text{
+text-align: center;
+}
+
+.wrapper .timer .wrapper_timer .block_text .title_timer {
+font-size: clamp(2rem, 2.5vw, 3rem);
+font-weight: 500;
+line-height: normal;
+}
+
+.wrapper .timer .wrapper_timer .block_time {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+gap: 10px;
+text-align: center;
+}
+
+.wrapper .timer .wrapper_timer .block_time .day, .hour, .minute, .second {
+width: 80px;
+height: 80px;
+font-size: clamp(1rem, 2.5vw, 1rem);
+font-weight: 500;
+line-height: normal;
+background: rgba(0, 191, 255, 0.1);
+border: 2px solid rgba(30, 144, 255, 0.5);
+border-radius: 50px;
+line-height: 1;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+
+.wrapper .timer .wrapper_timer .block_time, .hour p, .minute p, .second p {
+line-height: 1;
+margin:0
+}
+
+/* Пожелания */
+
+.wrapper .wishes {
+position: relative;
+width: 100%;
+min-height: 100vh;
+z-index: 1;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 10px 0;
+overflow: hidden;
+}
+
+.wrapper .wishes .wrapper_wishes{
+width: calc(25vw + 25vh);
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+
+.wrapper .wishes .wrapper_wishes .title_wishes{
+font-size: clamp(2.5rem, 5vw, 3rem);
+font-weight: 500;
+line-height: 0;
+}
+
+.wrapper .wishes .wrapper_wishes .dress_code_wishes, .gift_wishes, .coordinator_wishes, .transfer_wishes {
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+
+.wrapper .wishes .wrapper_wishes .dress_code_wishes p, .gift_wishes p, .coordinator_wishes p, .transfer_wishes p {
+font-size: clamp(1.5rem, 5vw, 2rem);
+font-weight: 500;
+line-height: 1.5;
+text-align: justify;
+}
+
+.wrapper .wishes .wrapper_wishes .coordinator_wishes .name_coordinator {
+font-size: clamp(2rem, 5vw, 2.5rem);
+font-weight: 500;
+line-height: 0.5;
+text-align: center;
+}
+
+.wrapper .wishes .wrapper_wishes .coordinator_wishes .tel {
+background: rgba(0, 191, 255, 0.1);
+border: 2px solid rgba(30, 144, 255, 0.5);
+border-radius: 100px;
+width: 100%;
+}
+
+.wrapper .wishes .wrapper_wishes .coordinator_wishes .tel p {
+font-size: clamp(1.5rem, 5vw, 2rem);
+line-height: 0.5;
+text-align: center;
+}
+
+/* Распорядок дня */
+.wrapper .schedule_day {
+position: relative;
+width: 100%;
+min-height: 100vh;
+z-index: 1;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 10px 0;
+}
+
+.wrapper .schedule_day .wrapper_schedule{
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+overflow: hidden;
+}
+
+.wrapper .schedule_day .wrapper_schedule .block_text {
+width: calc(40vw + 20vh);
+text-align: right;
+}
+
+.wrapper .schedule_day .wrapper_schedule .block_text  .title_schedule {
+font-size: clamp(2.5rem, 5vw, 3rem);
+font-weight: 500;
+line-height: 1.5;
+}
+
+.wrapper .schedule_day .wrapper_schedule .block_schedule {
+width: calc(40vw + 20vh);
+display: grid;
+align-items: center;
+gap: 20px;
+}
+
+.wrapper .schedule_day .wrapper_schedule .block_schedule .schedule_item {
+display: flex;
+align-items: center;
+}
+
+.wrapper .schedule_day .wrapper_schedule .block_schedule .schedule_item .schedule_img {
+width: calc(5vw + 10vh);
+}
+
+.wrapper .schedule_day .wrapper_schedule .block_schedule .schedule_item .text {
+width: 210px;
+padding-left: 10px;
+text-align: center;
+}
+
+.wrapper .schedule_day .wrapper_schedule .block_schedule .schedule_item .text .schedule_time {
+font-size: clamp(2rem, 5vw, 2.5rem);
+font-weight: 500;
+line-height: 0;
+}
+.wrapper .schedule_day .wrapper_schedule .block_schedule .schedule_item .text .schedule_text {
+font-size: 1.5rem;
+font-weight: 500;
+line-height: 1;
+}
+/* Локации */
+
+.wrapper .location {
+position: relative;
+width: 100%;
+min-height: 50vh;
+z-index: 1;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 10px 0;
+}
+
+.wrapper .location .wrapper_location {
+width: 100%;
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+gap: 100px;
+}
+
+.wrapper .location .wrapper_location .block_text {
+
+}
+
+.wrapper .location .wrapper_location .block_text .location_title {
+font-size: clamp(2.5rem, 5vw, 3rem);
+font-weight: 500;
+line-height: 0;
+}
+
+.wrapper .location .wrapper_location .all_locations {
+width: 100%;
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+gap: 20px 80px;
+
+}
+
+.wrapper .location .wrapper_location .all_locations .one_location {
+position: relative;
+display: flex;
+justify-content: top;
+align-items: center;
+flex-direction: column;
+}
+
+.wrapper .location .wrapper_location .all_locations .one_location .location_img {
+width: calc(8vw + 10vh);
+}
+
+.wrapper .location .wrapper_location .all_locations .one_location .location_text {
+font-size: 1.5rem;
+font-weight: 500;
+line-height: normal;
+text-align: center;
+}
+
+/* Конец приглажение */
+.wrapper .bottom_invitation {
+min-height: calc(10vh + 20vw);
+}
+
+.wrapper .bottom_invitation .block_text_bottom p {
+font-size: clamp(2rem, 5vw, 3rem);
+font-weight: 500;
+line-height: 1;
+text-align: center;
+}
+
+.wrapper .bottom_invitation .bottom_img {
+width: calc(15vh + 15vw);
+object-fit: contain;
+}
+
+
+
+/* Переходы */
+
+.wrapper .transition {
+position: relative;
+width: 100%;
+height: calc(10vh + 20vw);
+z-index: 1;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.wrapper .transition .transition_img {
+width: calc(20vh + 15vw);
+object-fit: contain;
+}
+
+
+/* Доделать анимации и время */

@@ -1,0 +1,441 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'invitation/invitation.css' %}">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <meta name="viewport" content="height=device-height,
+                      width=device-width, initial-scale=1.0,
+                      minimum-scale=1.0, maximum-scale=1.0,
+                      user-scalable=no, target-densitydpi=device-dpi">
+    <title>Title</title>
+</head>
+<body>
+<div class="wrapper">
+
+    <img class="background_image" src="{% static 'invitation/background_image.jpg' %}">
+    <!--    <div class="background_image"></div>-->
+
+    <section class="top_invitation">
+        <img class='image_castle' src="{% static 'invitation/castle_2.png' %}">
+        <img class='image_angle' src="{% static 'invitation/angle.png' %}">
+        <div class="block_text_top">
+            <div class="{% if guests.name_second_guest %}name_first{% else %}one_guest{% endif %}"
+                 data-aos="fade-right">
+                <p>{{ guests.name_first_guest }}</p>
+            </div>
+            {% if guests.name_second_guest %}
+            <div class="and">
+                <p>и</p>
+            </div>
+            <div class="name_second" data-aos="fade-left">
+                <p>{{ guests.name_second_guest }}</p>
+            </div>
+            {% endif %}
+            <div class="invitation_text" data-aos="fade-up">
+                <p>Мы очень хотим оказаться в окружении самых близких и дорогих для нас людей.
+                    С огромным удовольствием приглашаем вас разделить с нами этот волнующий праздник - нашу свадьбу,
+                    которая состоится <b>12 июля 2024 года</b>.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="transition">
+        <img class="transition_img" src="{% static 'invitation/transition.png' %}">
+    </section>
+
+    <section class="schedule_day">
+        <div class="wrapper_schedule">
+            <div class="block_text" data-aos="fade-left">
+                <p class="title_schedule">Свадебный день</p>
+            </div>
+            <div class="block_schedule">
+                <div class="schedule_item" data-aos="fade-right">
+                    <img class='schedule_img' src="{% static 'invitation/rings.png' %}">
+                    <div class="text">
+                        <p class="schedule_time">14:20</p>
+                        <p class="schedule_text">Регистрация брака</p>
+                    </div>
+                </div>
+                <div class="schedule_item" data-aos="fade-right">
+                    <img class='schedule_img' src="{% static 'invitation/tray.png' %}">
+                    <div class="text">
+                        <p class="schedule_time">15:00</p>
+                        <p class="schedule_text">Фуршет</p>
+                    </div>
+                </div>
+                <div class="schedule_item" data-aos="fade-right">
+                    <img class='schedule_img' src="{% static 'invitation/church.png' %}">
+                    <div class="text">
+                        <p class="schedule_time">16:00</p>
+                        <p class="schedule_text">Церемония венчания</p>
+                    </div>
+                </div>
+                <div class="schedule_item" data-aos="fade-right">
+                    <img class='schedule_img' src="{% static 'invitation/tray.png' %}">
+                    <div class="text">
+                        <p class="schedule_time">17:40</p>
+                        <p class="schedule_text">Банкет</p>
+                    </div>
+                </div>
+                <div class="schedule_item" data-aos="fade-right">
+                    <img class='schedule_img' src="{% static 'invitation/fair.png' %}">
+                    <div class="text">
+                        <p class="schedule_time">22:00</p>
+                        <p class="schedule_text">Свадебное шоу</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="transition">
+        <img class="transition_img" src="{% static 'invitation/transition.png' %}">
+    </section>
+
+    <section class="location">
+        <div class="wrapper_location">
+            <div class="block_text" data-aos="fade-down">
+                <p class="location_title">Как добраться?</p>
+            </div>
+            <div class="all_locations">
+                <div class="one_location" data-aos="fade-down">
+                    <img class="location_img" src="{% static 'invitation/rings.png' %}">
+                    <p class="location_text">Дворец Бракосочетания<br>ул. Тихвинская 11/16<br>Сбор в 14:00</p>
+                </div>
+                <div class="one_location" data-aos="fade-down">
+                    <img class="location_img" src="{% static 'invitation/church.png' %}">
+                    <p class="location_text">Собор Покрова<br>ул. Бредово-Звериная 18</p>
+                </div>
+                <div class="one_location" data-aos="fade-down">
+                    <img class="location_img" src="{% static 'invitation/tray.png' %}">
+                    <p class="location_text">Банкетный зал "Милава"<br>ул. Ломоносова 22В</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="transition">
+        <img class="transition_img" src="{% static 'invitation/transition.png' %}">
+    </section>
+
+    <section class="dress_code">
+        <!--        <div class="image_dress">-->
+        <!--            <img src="{% static 'invitation/dress_code.png' %}">-->
+        <!--        </div>-->
+
+        <div class="wrapper_dress">
+            <div class="block_text_dress">
+                <p class="title_dress" data-aos="fade-down">Dress-Code</p>
+                <p class="text_dress">Мы будем благодарны, если при выборе<br>нарядов на наше торжество вы<br>придержитесь
+                    следующей
+                    палитры: </p>
+            </div>
+            <div class="block_color">
+                <div class="yellow" data-aos="zoom-in"></div>
+                <div class="peach" data-aos="zoom-in" data-aos-delay="100"></div>
+                <div class="blue" data-aos="zoom-in" data-aos-delay="200"></div>
+                <div class="violet" data-aos="zoom-in" data-aos-delay="300"></div>
+                <div class="red" data-aos="zoom-in" data-aos-delay="400"></div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="transition">
+        <img class="transition_img" src="{% static 'invitation/transition.png' %}">
+    </section>
+
+    <section class="timer">
+        <div id="timer" class="wrapper_timer">
+
+            <div class="block_text">
+                <p class="title_timer">До свадьбы осталось:</p>
+            </div>
+
+            <div class="block_time">
+                <p class="day" data-aos="fade-left">{{ days }}<br>дней</p>
+                <div class="hour" data-aos="fade-left" data-aos-delay="200">
+                    <p id="hour">{{ hours|stringformat:"02d" }}</p>
+                    <p>часов</p>
+                </div>
+                <div class="minute" data-aos="fade-left" data-aos-delay="300">
+                    <p id="minute">{{ minutes|stringformat:"02d" }}
+                    </p>
+                    <p>минут</p>
+                </div>
+                <div class="second" data-aos="fade-left" data-aos-delay="400">
+                    <p id="second">{{ seconds|stringformat:"02d" }}
+                    </p>
+                    <p>секунд</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="transition">
+        <img class="transition_img" src="{% static 'invitation/transition.png' %}">
+    </section>
+
+    <section class="wishes">
+        <div class="wrapper_wishes">
+
+            <p class="title_wishes" data-aos="fade-down">Пожелания</p>
+
+            <div class="dress_code_wishes" data-aos="fade-down-right" data-aos-delay="800" data-aos-duration="2000">
+                <p><b>Просим</b> в вашем дресскоде исключить леопардовый
+                    принт и одежду красного цвета.</p>
+            </div>
+
+            <div class="gift_wishes" data-aos="fade-down-left" data-aos-delay="800" data-aos-duration="2000">
+                <p>Мы не хотим утруждать Вас выбором подарков, лучшим выбором будет <b>подарок в конверте</b>, ведь это
+                    поможет
+                    нам осуществить заветную мечту!</p>
+            </div>
+
+            <div class="transfer_wishes" data-aos="fade-down-right" data-aos-delay="800" data-aos-duration="2000">
+                <p>Гостей будет ожидать <b>трансфер</b> от ЗАГСа до места проведения фуршета и от Собора Покрова до
+                    Банкетной
+                    площадки.</p>
+            </div>
+
+            <div class="coordinator_wishes" data-aos="fade-down-left" data-aos-delay="800" data-aos-duration="2000">
+                <p>По всем вопросам в день мероприятия обращайтесь к нашему <b>координатору:</b></p>
+                <p class="name_coordinator">Ольга</p>
+                <div class="tel">
+                    <p>Тел: 8(951)-728-65-21</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="transition">
+        <img class="transition_img" src="{% static 'invitation/transition.png' %}">
+    </section>
+
+    {% if not guests.presence_on_wedding %}
+    <section class="guest_form">
+        <form action="" method="post" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+            {% csrf_token %}
+            <div class="form_title">
+                <p class="title">Анкета гостя</p>
+            </div>
+            <div class="name">
+                <div class="input_box">
+                    <label for='name' class="form_name">Ваше имя и фамилия</label>
+                    <input class='input_name' type="text"
+                           value="{{ guests.name_first_guest }} Фамилия{% if guests.name_second_guest %}, {{ guests.name_second_guest }} Фамилия {% endif %}"
+                           name="name" id="name" required>
+                </div>
+                {% if not guests.name_second_guest %}
+                <div class="input_box_plus">
+                    <input class="input_checkbox" id="plus_one" value='True' type="checkbox" name="one_plus"
+                           onchange='showOrHide("plus_one", "visible_guest");'>
+                    <label class='label_plus_one' for="plus_one">+1</label>
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="presence">
+                <label for="title_presence" class="title_presence">Планируете присутствовать на свадьбе?</label>
+                <div id="title_presence" class="radio_label">
+                    <div class="input_box">
+                        <input class="input_radio" id='yes' value='True' type="radio" name="presence" checked>
+                        <label class="input_label" for="yes">Обязательно приду</label>
+                    </div>
+                    <div class="input_box">
+                        <input class="input_radio" id='no' value='False' type="radio" name="presence">
+                        <label class="input_label" for="no">Не смогу присутствовать</label>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="alco">
+                <label for='title_alco' class="title_alco">Уточните ваши предпочтения в алкоголе, выбрав один или
+                    несколько вариантов:</label>
+                <div id="title_alco" class="all_guest">
+                    <div class="first_guest">
+                        <p class="name_guest">{{ guests.name_first_guest }}</p>
+                        <div class="input_boxes">
+                            <div class="input_box">
+                                <input class="input_checkbox" id='no_alco_1' type="checkbox" value="Не пью"
+                                       name="no_alco_1">
+                                <label class="label_input" for="no_alco_1">Не пью</label>
+                            </div>
+                            <div class="input_box">
+                                <input class="input_checkbox" id='vodka_1' type="checkbox" value="Водка"
+                                       name="vodka_1">
+                                <label class="label_input" for="vodka_1">Водка</label>
+                            </div>
+                            <div class="input_box">
+                                <input class="input_checkbox" id='champagne_1' type="checkbox" value="Шампанское"
+                                       name="champagne_1">
+                                <label class="label_input" for="champagne_1">Шампанское</label>
+                            </div>
+                            <div class="input_box">
+                                <input class="input_checkbox" id='red_wine_dry_1' type="checkbox"
+                                       value="Красное сухое вино"
+                                       name="red_wine_dry_1">
+                                <label class="label_input" for="red_wine_dry_1">Кр. сухое вино</label>
+                            </div>
+                            <div class="input_box">
+                                <input class="input_checkbox" id='red_wine_semi_dry_1' type="checkbox"
+                                       value="Красное полусухое вино"
+                                       name="red_wine_semi_dry_1">
+                                <label class="label_input" for="red_wine_semi_dry_1">Кр. полусухое вино</label>
+                            </div>
+                            <div class="input_box">
+                                <input class="input_checkbox" id='white_wine_dry_1' type="checkbox"
+                                       value="Белое сухое вино"
+                                       name="white_wine_dry_1">
+                                <label class="label_input" for="white_wine_dry_1">Бел. сухое вино</label>
+                            </div>
+                            <div class="input_box">
+                                <input class="input_checkbox" id='white_wine_semi_dry_1' type="checkbox"
+                                       value="Белое полусухое вино"
+                                       name="white_wine_semi_dry_1">
+                                <label class="label_input" for="white_wine_semi_dry_1">Бел. полусухое вино</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="second_guest" id='visible_guest'
+                         {% if not guests.name_second_guest %} style='display: none;' {% endif %}>
+                        <p class="name_guest">{% if guests.name_second_guest %}{{ guests.name_second_guest }}{% else %}
+                            Гость +1{% endif %}</p>
+                        <div class="input_boxes">
+                            <div class="input_box">
+                                <input class="input_checkbox" id='no_alco_2' type="checkbox" value="Не пью"
+                                       name="no_alco_2">
+                                <label class="label_input" for="no_alco_2">Не пью</label>
+                            </div>
+                            <div class="input_box">
+                                <input class="input_checkbox" id='vodka_2' type="checkbox" value="Водка"
+                                       name="vodka_2">
+                                <label class="label_input" for="vodka_2">Водка</label>
+                            </div>
+                            <div class="input_box">
+                                <input class="input_checkbox" id='champagne_2' type="checkbox" value="Шампанское"
+                                       name="champagne_2">
+                                <label class="label_input" for="champagne_2">Шампанское</label>
+                            </div>
+
+                            <div class="input_box">
+                                <input class="input_checkbox" id='red_wine_dry_2' type="checkbox"
+                                       value="Красное сухое вино"
+                                       name="red_wine_dry_2">
+                                <label class="label_input" for="red_wine_dry_2">Кр. сухое вино</label>
+                            </div>
+                            <div class="input_box">
+                                <input class="input_checkbox" id='red_wine_semi_dry_2' type="checkbox"
+                                       value="Красное полусухое вино"
+                                       name="red_wine_semi_dry_2">
+                                <label class="label_input" for="red_wine_semi_dry_2">Кр. полусухое вино</label>
+                            </div>
+                            <div class="input_box">
+                                <input class="input_checkbox" id='white_wine_dry_2' type="checkbox"
+                                       value="Белое сухое вино"
+                                       name="white_wine_dry_2">
+                                <label class="label_input" for="white_wine_dry_2">Бел. сухое вино</label>
+                            </div>
+                            <div class="input_box">
+                                <input class="input_checkbox" id='white_wine_semi_dry_2' type="checkbox"
+                                       value="Белое полусухое вино"
+                                       name="white_wine_semi_dry_2">
+                                <label class="label_input" for="white_wine_semi_dry_2">Бел. полусухое вино</label>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit">Отправить</button>
+        </form>
+    </section>
+    {% endif %}
+
+    <section class="bottom_invitation">
+        <div class="block_text_bottom">
+            <p>Будем рады вас видеть!</p>
+        </div>
+        <img class="bottom_img" data-aos="zoom-in" src="{% static 'invitation/our_icon_2.png' %}">
+    </section>
+</div>
+
+
+<script type="text/javascript">
+        // Function to update the countdown timer
+        function updateTimer() {
+            var hours = parseInt(document.getElementById('hour').textContent);
+            var minutes = parseInt(document.getElementById('minute').textContent);
+            var seconds = parseInt(document.getElementById('second').textContent);
+
+            if (seconds > 0) {
+                seconds--;
+            } else {
+                if (minutes > 0) {
+                    minutes--;
+                    seconds = 59;
+                } else {
+                    if (hours > 0) {
+                        hours--;
+                        minutes = 59;
+                        seconds = 59;
+                    } else {
+                        // Timer has reached zero, you can handle this case as needed
+                    }
+                }
+            }
+
+
+            // Update the timer display
+
+            document.getElementById('hour').textContent = (hours < 10 ? '0' : '') + hours;
+
+            document.getElementById('minute').textContent = (minutes < 10 ? '0' : '') + minutes;
+
+            document.getElementById('second').textContent = (seconds < 10 ? '0' : '') + seconds;
+
+
+
+        }
+
+        // Update the timer every second
+        setInterval(updateTimer, 1000);
+
+
+
+
+
+
+
+
+
+</script>
+<script type="text/javascript">
+  function showOrHide(cb, cat) {
+    cb = document.getElementById(cb);
+    cat = document.getElementById(cat);
+    if (cb.checked) cat.style.display = "block";
+    else cat.style.display = "none";
+  }
+
+
+
+
+
+
+
+</script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="{% static 'invitation/app.js'%}"></script>
+</body>
+
+</html>
